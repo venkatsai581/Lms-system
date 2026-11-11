@@ -33,7 +33,7 @@ Requires Node.js 20.19+ or 22.12+ for Vite 7.
 
 ## Demo data
 
-The default student is Arjun Reddy. Sample instructors use Indian names. Use the top-right role selector to switch between Student and Admin demo views. Role switching is a demo feature, not secure authentication.
+The default student is Venkat. Sample instructors use Indian names. Use the top-right role selector to switch between Student and Admin demo views. Role switching is a demo feature, not secure authentication.
 
 ## Admin course editor formats
 

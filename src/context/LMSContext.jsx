@@ -5,8 +5,8 @@ import { readStorage, writeStorage } from '../utils/storage';
 const LMSContext = createContext(null);
 
 const defaultProfile = {
-  name: 'Arjun Reddy',
-  email: 'arjun.reddy@example.com',
+  name: 'Venkat',
+  email: 'venkat@example.com',
   phone: '+91 98765 43210',
   role: 'Student',
   bio: 'Curious learner exploring web development, design and technology.',
