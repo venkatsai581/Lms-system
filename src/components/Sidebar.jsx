@@ -1,0 +1,8 @@
+import { NavLink } from 'react-router-dom';
+import { BookOpen, LayoutDashboard, Compass, GraduationCap, UserRound, ShieldCheck, X } from 'lucide-react';
+import { useLMS } from '../context/LMSContext';
+const studentLinks = [{to:'/',label:'Dashboard',icon:LayoutDashboard},{to:'/catalogue',label:'Course catalogue',icon:Compass},{to:'/my-courses',label:'My courses',icon:GraduationCap},{to:'/profile',label:'My profile',icon:UserRound}];
+export default function Sidebar({open,onClose}) {
+ const {role}=useLMS(); const links=role==='admin'?[{to:'/admin',label:'Course management',icon:ShieldCheck},{to:'/',label:'Student preview',icon:LayoutDashboard},{to:'/profile',label:'My profile',icon:UserRound}]:studentLinks;
+ return <><div className={`sidebar-overlay ${open?'show':''}`} onClick={onClose}/><aside className={`sidebar ${open?'open':''}`}><div className="brand"><span className="brand-icon"><BookOpen size={22}/></span><span>LearnSpace</span><button className="icon-btn mobile-close" aria-label="Close menu" onClick={onClose}><X size={19}/></button></div><div className="nav-label">WORKSPACE</div><nav>{links.map(link=><NavLink key={link.to} to={link.to} end={link.to==='/'} onClick={onClose} className={({isActive})=>`nav-link ${isActive?'active':''}`}><link.icon size={19}/><span>{link.label}</span></NavLink>)}</nav><div className="sidebar-bottom"><div className="help-card"><div className="help-icon">✦</div><strong>Keep learning!</strong><p>Small steps every day lead to big results.</p><NavLink to="/catalogue" onClick={onClose}>Explore courses →</NavLink></div><div className="sidebar-foot">© 2026 LearnSpace</div></div></aside></>;
+}
